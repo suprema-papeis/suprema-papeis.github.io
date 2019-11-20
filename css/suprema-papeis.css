@@ -275,6 +275,7 @@ a {
   padding-top: 3rem;
   padding-bottom: 3.5rem;
   padding-left: 3.5rem;
+  overflow: hidden;
 }
 
 .produtos-heading {
@@ -352,7 +353,7 @@ a {
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  grid-template-areas: ".";
+  grid-template-areas: '.';
   -ms-grid-columns: 1fr 16px 1fr;
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
@@ -654,7 +655,7 @@ a {
   grid-auto-columns: 1fr;
   grid-column-gap: 16px;
   grid-row-gap: 16px;
-  grid-template-areas: ".";
+  grid-template-areas: '.';
   -ms-grid-columns: 1fr 16px 1fr;
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto;
@@ -1781,4 +1782,3 @@ a {
     grid-row-end: 3;
   }
 }
-
