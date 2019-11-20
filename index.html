@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--  Last Published: Fri Nov 08 2019 15:43:34 GMT+0000 (UTC)  -->
+<!--  Last Published: Wed Nov 20 2019 12:49:09 GMT+0000 (Coordinated Universal Time)  -->
 <html data-wf-page="5db0ccdff47aa60794144284" data-wf-site="5db0ccdff47aa6fe03144283">
 <head>
   <meta charset="utf-8">
@@ -33,6 +33,12 @@
   -webkit-scroll-snap-coordinate: 50% 50%;
   scroll-snap-coordinate: 50% 50%;
   scroll-snap-align: center;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
 }
 </style>
   </div>
@@ -483,8 +489,16 @@
             <form id="email-form" name="email-form" data-name="Email Form"><label for="Nome">Seu nome</label><input type="text" class="text-field w-input" maxlength="256" name="Nome" data-name="Nome" placeholder="Seu Nome Aqui" id="Nome"><label for="email">Seu email</label><input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="nome@dominio.com" id="email" required=""><label for="Mensagem">Mensagem</label><textarea placeholder="Escreve o texto aqui..." maxlength="5000" id="Mensagem" name="Mensagem" required="" data-name="Mensagem" class="textarea w-input"></textarea>
               <footer class="form-actions"><a href="mailto:sac@supremapapeis.ind.br?subject=Mensagem%20do%20site" class="form-link">sac@supremapapeis.ind.br</a><input type="submit" value="Enviar" data-wait="Aguarde..." class="form-btn w-button"></footer>
             </form>
-            <div class="w-form-done">
-              <div>Thank you! Your submission has been received!</div>
+            <div class="success-message w-form-done">
+              <div class="form-success-wrapper">
+                <div class="form-success"><img src="images/logo-green.svg" alt="" class="image">
+                  <h4 class="form-success-heading">Recebemos<br>sua mensagem.</h4>
+                  <div class="text-block">Em breve responderemos ao e-mail informado.</div>
+                  <a href="index.html" class="link-block w-inline-block w--current">
+                    <div>X</div>
+                  </a>
+                </div>
+              </div>
             </div>
             <div class="w-form-fail">
               <div>Oops! Something went wrong while submitting the form.</div>
@@ -495,7 +509,7 @@
     </section>
   </main>
   <footer class="footer-wrapper">
-    <div class="map w-widget w-widget-map"></div>
+    <div data-widget-latlng="-7.9736621,-34.91690639999999" data-disable-scroll="1" data-widget-zoom="15" data-widget-tooltip="Suprema Papeis" class="map w-widget w-widget-map"></div>
     <div id="Copyright" class="copyright">
       <div class="copyright-block">
         <div class="copyright-text">Suprema Papeis © 2019. Todos os direitos reservados</div>
