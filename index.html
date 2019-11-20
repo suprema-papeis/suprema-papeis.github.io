@@ -485,11 +485,25 @@ input[type="search"]::-webkit-search-results-decoration {
               <p>Rua Sítio do Ronca, nº5<br>Paratibe - Paulista/PE<br>CEP 53.4000.000</p>
             </address>
           </div>
-          <div id="w-node-21567d38cd87-94144284" class="form-block w-form">
-            <form id="email-form" name="email-form" data-name="Email Form"><label for="Nome">Seu nome</label><input type="text" class="text-field w-input" maxlength="256" name="Nome" data-name="Nome" placeholder="Seu Nome Aqui" id="Nome"><label for="email">Seu email</label><input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="nome@dominio.com" id="email" required=""><label for="Mensagem">Mensagem</label><textarea placeholder="Escreve o texto aqui..." maxlength="5000" id="Mensagem" name="Mensagem" required="" data-name="Mensagem" class="textarea w-input"></textarea>
-              <footer class="form-actions"><a href="mailto:sac@supremapapeis.ind.br?subject=Mensagem%20do%20site" class="form-link">sac@supremapapeis.ind.br</a><input type="submit" value="Enviar" data-wait="Aguarde..." class="form-btn w-button"></footer>
+          <div id="w-node-21567d38cd87-94144284" class="form-block">
+            <form id="email-form" name="email-form" data-name="Email Form" method="POST" action="https://us-central1-fluidocms.cloudfunctions.net/formContactSendEmail">
+              <input type="hidden" name="subject" value="Mensagem do Site" />
+              <input type="hidden" name="mailTo" value="admin@fluido.design" />
+              <label for="name">Seu nome</label>
+              <input type="text" class="text-field w-input" maxlength="256" name="name" data-name="Nome" placeholder="Seu Nome Aqui" id="name">
+              <label for="email">Seu email</label>
+              <input type="email" class="text-field w-input" maxlength="256" name="email" data-name="Email" placeholder="nome@dominio.com" id="email" required>
+              <label for="message">Mensagem</label>
+              <textarea placeholder="Escreve o texto aqui..." maxlength="5000" id="message" name="message" required="" data-name="Mensagem" class="textarea w-input"></textarea>
+              <footer class="form-actions">
+                <a href="mailto:sac@supremapapeis.ind.br?subject=Mensagem%20do%20site" class="form-link">sac@supremapapeis.ind.br</a>
+                <button type="submit" class="form-btn w-button">Enviar</button>
+              </footer>
+              <footer class="form-actions" id="email-form-waiting" style="display: none;">
+                <div>Aguarde...</div>
+              </footer>
             </form>
-            <div class="success-message w-form-done">
+            <div id="email-form-success" class="success-message" style="display: none;">
               <div class="form-success-wrapper">
                 <div class="form-success"><img src="images/logo-green.svg" alt="" class="image">
                   <h4 class="form-success-heading">Recebemos<br>sua mensagem.</h4>
@@ -500,7 +514,7 @@ input[type="search"]::-webkit-search-results-decoration {
                 </div>
               </div>
             </div>
-            <div class="w-form-fail">
+            <div id="email-form-fail" style="display: none;">
               <div>Oops! Something went wrong while submitting the form.</div>
             </div>
           </div>
@@ -519,6 +533,7 @@ input[type="search"]::-webkit-search-results-decoration {
   </footer>
   <script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.4.1.min.220afd743d.js" type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script src="js/suprema-papeis.js" type="text/javascript"></script>
+  <script src="js/contact-form.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>
